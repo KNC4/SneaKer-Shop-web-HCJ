@@ -5,11 +5,18 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="Styles/styles.css" />
+    <!-- SweetAlert -->
+    <link
+      href="
+      https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.min.css"
+      rel="stylesheet"
+    />
     <!-- Box icons -->
     <link
       href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
       rel="stylesheet"
     />
+    <script src="js/jquery-3.6.4.min.js"></script>
     <title>SneaKer Shop</title>
   </head>
   <body>
@@ -18,9 +25,11 @@
       <!-- Nav -->
       <div class="nav container">
         <img href="#" src="Assets/logo.png" class="logo" />
-        <!-- Cart icon -->
-        <i class="bx bxs-cart" id="cart-icon"></i>
-
+        <!-- Cart icon and log in-->
+        <div class="tools">
+          <button class="action-btn" id="loginBtn">Log In</button>
+          <i class="bx bxs-cart" id="cart-icon"></i>
+        </div>
         <div class="cart">
           <div class="cart-header">
             <h2 class="cart-title">My Cart</h2>
@@ -29,6 +38,7 @@
           </div>
           <!-- Content -->
           <div class="cart-content"></div>
+          <div class="cart-content" id="cartItems"></div>
           <!-- Total -->
           <div class="total">
             <div class="total-title">Total:</div>
@@ -39,51 +49,29 @@
         </div>
       </div>
     </header>
+    <div id="loginModal" class="loginModal" style="display: none">
+      <h2>Log into the shop</h2>
+      <input
+        class="form-input"
+        type="text"
+        name="nombre"
+        placeholder="User name"
+      />
+
+      <input
+        class="form-input"
+        type="password"
+        name="nombre"
+        placeholder="Password"
+      />
+      <p>New on the shop? <span id="register">Register</span></p>
+      <button class="action-btn modal-close">Close</button>
+    </div>
     <!-- Shop -->
     <section class="shop container">
       <h2 class="section-title">SneaKer Shop Products</h2>
       <!-- Content -->
-      <div class="shop-content">
-        <!-- Box 1 -->
-        <div class="product-box">
-          <img src="Assets/air_force.png" alt="" class="product-img" />
-          <h2 class="product-title">Air Force 1</h2>
-          <span class="price">$110</span>
-          <i class="bx bxs-shopping-bag add-cart"></i>
-        </div>
-        <!-- Box 2 -->
-        <div class="product-box">
-          <img src="Assets/air_force_high.png" alt="" class="product-img" />
-          <h2 class="product-title">Air 1 High</h2>
-          <span class="price">$120</span>
-          <i class="bx bxs-shopping-bag add-cart"></i>
-        </div>
-        <!-- Box 3 -->
-        <div class="product-box">
-          <img src="Assets/air_jordan1mid.png" alt="" class="product-img" />
-          <h2 class="product-title">Air Jordan 1</h2>
-          <span class="price">$160</span>
-          <i class="bx bxs-shopping-bag add-cart"></i>
-        </div>
-        <!-- Box 4 -->
-        <div class="product-box">
-          <img
-            src="Assets/dunk_high_retro_premium.png"
-            alt=""
-            class="product-img"
-          />
-          <h2 class="product-title">Dunk High Retro Premium</h2>
-          <span class="price">$125</span>
-          <i class="bx bxs-shopping-bag add-cart"></i>
-        </div>
-        <!-- Box 5 -->
-        <div class="product-box">
-          <img src="Assets/air_vaporMax.png" alt="" class="product-img" />
-          <h2 class="product-title">Air Vapor Max</h2>
-          <span class="price">$210</span>
-          <i class="bx bxs-shopping-bag add-cart"></i>
-        </div>
-      </div>
+      <div class="shop-content" id="startShoes"></div>
     </section>
     <div class="banner">
       <i class="bx bxs-chevron-down-circle banner-title"></i>
@@ -93,7 +81,7 @@
 
     <section class="shop container">
       <!-- Content -->
-      <div class="shop-content">
+      <div class="shop-content" id="selectionShoes">
         <!-- Box 1 -->
         <div class="product-box">
           <img src="Assets/air_force.png" alt="" class="product-img" />
@@ -122,6 +110,13 @@
       </div>
     </section>
     <!-- Link to  js-->
-    <script src="Js/main.js" />
+    <script type="module" src="Js/main.js" />
+    <script src="
+    https://cdn.jsdelivr.net/npm/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <script src="node_modules/sweetalert2/dist/sweetalert2.all.min.js"></script>
+    <link
+      rel="stylesheet"
+      href="node_modules/sweetalert2/dist/sweetalert2.min.css"
+    />
   </body>
 </html>
